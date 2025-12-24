@@ -1,59 +1,77 @@
-# LandingServicos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+# Landing page de serviços(Tecnológicos)
 
-## Development server
+# Uma breve descrição sobre o que esse projeto faz e para quem ele é
 
-To start a local development server, run:
+Landing Page de Serviços - Angular 20
+Landing Page profissional de alta performance desenvolvida com o ecossistema moderno do Angular. O projeto foi projetado com foco em conversão e otimização para motores de busca (SEO) através de renderização no lado do servidor (SSR).
 
-```bash
-ng serve
-```
+# Stack Tecnológica
+Framework: Angular v20.3.0
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Arquitetura: Componentes Standalone com Hydration
 
-## Code scaffolding
+Processamento: Server-Side Rendering (SSR) via @angular/ssr
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+UI Framework: Angular Material v20
 
-```bash
-ng generate component component-name
-```
+Servidor Web: Express
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Linguagem: TypeScript
 
-```bash
-ng generate --help
-```
+Estilização: SCSS (Sass)
 
-## Building
+Funcionalidades Principais
+Performance Otimizada: Utilização do novo motor de build do Angular para pacotes leves e carregamento rápido.
 
-To build the project run:
+SEO & SSR: Renderização no servidor para garantir indexação completa em motores de busca e compartilhamento em redes sociais.
 
-```bash
-ng build
-```
+Layout Responsivo: Design adaptável para dispositivos móveis, tablets e desktop utilizando CSS Grid e Flexbox.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Componentes Modulares: Arquitetura limpa onde cada secção da página é um componente independente.
 
-## Running unit tests
+Feedback de Utilizador: Sistema de notificações profissionais integrado para interações em formulários.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Estrutura do Projeto
+A organização dos ficheiros segue as melhores práticas de escalabilidade:
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+Instalação e Execução
+Para configurar o ambiente de desenvolvimento localmente, execute os seguintes comandos:
 
-```bash
-ng e2e
-```
+Instalar dependências:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Bash
 
-## Additional Resources
+npm install
+Executar em modo de desenvolvimento:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Bash
+
+npm start
+Gerar build de produção:
+
+Bash
+
+npm run build
+Iniciar o servidor SSR:
+
+Bash
+
+npm run serve:ssr:landing-servicos
+Configuração de Build
+O projeto utiliza o ficheiro angular.json como núcleo de configuração. Estão definidos orçamentos (budgets) rigorosos para garantir que o bundle final não comprometa a performance:
+
+Initial Bundle: Limite de 500kB para o carregamento inicial.
+
+Component Styles: Limite de 4kB por componente para otimizar a renderização do CSS crítico.
+
+Modelagem de Dados
+O projeto utiliza tipagem forte para garantir a integridade das informações exibidas:
+
+Servico: Interface que define a estrutura de dados para o catálogo de soluções, incluindo identificação, descrição e referências de imagem.
+
+PricingTier: Estrutura para gestão de planos, preços e listas de recursos incluídos.
+
+ProcessStep: Modelo para representação das etapas da metodologia de trabalho.
