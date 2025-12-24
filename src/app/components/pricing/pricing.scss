@@ -1,0 +1,126 @@
+// Em: src/app/components/pricing/pricing.component.scss (REFATORADO)
+
+:host {
+  display: block;
+  // Usando uma variável CSS para cores de fundo
+  background-color: var(--mat-sidenav-container-background-color, #f0f0f0);
+  padding: 4rem 0;
+}
+
+// Estilos de Contexto
+.subtitulo {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3.5rem;
+}
+
+// -------------------------------------------------------------
+// GRID DE PREÇOS (BLOCK: pricing-grid)
+// -------------------------------------------------------------
+.pricing-grid {
+  display: grid;
+  // Desktop: 3 colunas uniformes
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+// -------------------------------------------------------------
+// CARD DE PREÇO (ELEMENT: price-card)
+// -------------------------------------------------------------
+.price-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  // TRANSITION: Efeito de hover
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  // HOVER EFFECT
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  // ELEMENTO: mat-card-header
+  mat-card-header {
+    display: block;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  // ELEMENTO: mat-card-title
+  mat-card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+
+// ELEMENTO: price-value
+.price-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 1.5rem 0;
+  // Usando a variável de cor Material
+  color: var(--mat-primary-600);
+}
+
+// ELEMENTO: resource-list
+.resource-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  // ELEMENTO: item da lista (li)
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+// -------------------------------------------------------------
+// MODIFIER: DESTAQUE PARA O PLANO RECOMENDADO
+// -------------------------------------------------------------
+.card-destaque {
+  transform: scale(1.05);
+  border: 3px solid var(--mat-primary-500);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  // Override no hover para evitar duplicação de transform
+  &:hover {
+    transform: scale(1.05) translateY(-8px); // Mantém o scale, adiciona o movimento
+  }
+
+  .price-value {
+    font-size: 3rem;
+    color: var(--mat-accent-500);
+  }
+}
+
+// -------------------------------------------------------------
+// RESPONSIVIDADE
+// -------------------------------------------------------------
+@media (max-width: 992px) {
+  .pricing-grid {
+    // Tablet/Mobile: 1 coluna
+    grid-template-columns: 1fr;
+  }
+
+  .card-destaque {
+    // Remove o scale no mobile, mas mantém o border/shadow
+    transform: none;
+
+    // Garante que o hover de movimento funcione no mobile se o scale for removido
+    &:hover {
+        transform: translateY(-8px);
+    }
+  }
+}

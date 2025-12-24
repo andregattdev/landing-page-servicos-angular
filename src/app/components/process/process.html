@@ -1,0 +1,26 @@
+<section class="process-wrapper" id="processo">
+  <div class="container">
+    <h2>Como Trabalhamos</h2>
+    <p class="subtitulo">Nosso processo é dividido em etapas transparentes para garantir o melhor resultado.</p>
+
+    <div class="process-list">
+      @for (step of processSteps; track step.step) {
+
+        <mat-card class="process-card">
+          <div class="step-icon-container">
+            <mat-icon color="primary">{{ step.icone }}</mat-icon>
+            <div class="step-number">{{ step.step }}</div>
+          </div>
+
+          <mat-card-header>
+            <mat-card-title>{{ step.titulo }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>{{ step.descricao }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </div>
+</section>

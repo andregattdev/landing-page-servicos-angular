@@ -1,0 +1,43 @@
+/* Estilo do Host: Define o Bloco do Footer */
+:host {
+  display: block;
+  background-color: #222; /* Fundo Quase Preto */
+  color: #aaa;           /* Cor do Texto Cinza Claro */
+  padding: 2rem 0;       /* Espaçamento Vertical */
+  width: 100%;           /* Garante que ocupe a largura total */
+}
+
+/* Container: Responsável pelo alinhamento Flexbox */
+.container {
+  /* Centraliza o próprio container principal (se ele tiver um max-width definido em outro lugar) */
+  margin: 0 auto;
+  /* Adicione um max-width aqui se não tiver um global para evitar que o conteúdo se estique demais */
+  max-width: 1200px;
+
+  /* Configuração do Flexbox para alinhamento interno */
+  display: flex;
+  align-items: center;  /* Centraliza Verticalmente (logo e texto) */
+  justify-content: center; /* Centraliza Horizontalmente o Bloco (logo + texto) */
+
+  font-size: 0.9rem;
+}
+
+/* Estilo da Logo: Define Tamanho e Espaçamento */
+.footer-logo {
+  max-width: 80px;      /* Tamanho da Logo */
+  height: auto;         /* Mantém Proporção */
+
+  /* Espaçamento entre a logo e o texto de copyright */
+  margin-right: 15px;
+
+  /* Garantindo que se comporta bem no Flexbox */
+  flex-shrink: 0;
+}
+
+/* Estilo do Parágrafo: Limpeza de Margens */
+p {
+  margin: 0; /* Remove margens padrão que poderiam atrapalhar o alinhamento Flex */
+  padding: 0;
+  /* Garante que o texto de copyright não seja quebrado pelo Flexbox */
+  white-space: nowrap;
+}

@@ -1,0 +1,16 @@
+<section class="services-wrapper">
+  <div class="container">
+    <h2>Nossos Serviços</h2>
+    <p class="subtitulo">Conheça as soluções que oferecemos para o seu negócio.</p>
+
+    <div class="services-grid">
+      @for (servico of servicos; track servico.id) {
+        <div class="service-card">
+          <img [src]="servico.icone" [alt]="servico.nome" class="service-icon">
+          <h3>{{ servico.nome }}</h3>
+          <p>{{ servico.descricao }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

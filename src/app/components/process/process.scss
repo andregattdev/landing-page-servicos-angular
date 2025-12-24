@@ -1,0 +1,78 @@
+:host {
+  display: block;
+  background-color: #fff;
+  padding: 4rem 0;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3.5rem;
+}
+
+.process-list {
+  display: grid;
+  // Layout para Desktop: 4 colunas uniformes (1fr)
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.process-card {
+  text-align: center;
+  padding: 1rem;
+  // Efeito de hover para dar vida
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.step-icon-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.step-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--mat-primary-500); // Cor primária do Material
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 2px solid #fff;
+}
+
+mat-icon {
+  font-size: 3rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+mat-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+// --- RESPONSIVIDADE ---
+@media (max-width: 1024px) {
+  .process-list {
+    // Tablet: 2 colunas
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .process-list {
+    // Mobile: 1 coluna
+    grid-template-columns: 1fr;
+  }
+}

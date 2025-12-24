@@ -1,0 +1,85 @@
+/* Importa a paleta de cores do Material para usar o 'primary' */
+@use '@angular/material' as mat;
+
+:host {
+  display: block;
+  background-color: #fff;
+  padding: 4rem 0;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3.5rem;
+}
+
+// -------------------------------------------------------------
+// LAYOUT DA FEATURE (Zig-Zag)
+// -------------------------------------------------------------
+.feature-item {
+  display: flex;
+  align-items: center; // Centraliza verticalmente o texto e a imagem
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.feature-image,
+.feature-text {
+  flex: 1; // Ambas as colunas ocupam 50%
+}
+
+// Estilos da Imagem (Garante que ela se ajuste e seja visível)
+.feature-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.key-points {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+// A MÁGICA DA ALTERNÂNCIA (O CSS para o [class.reverse])
+.feature-item.reverse {
+  // Isso inverte a ordem dos itens (Image <-> Text)
+  flex-direction: row-reverse;
+}
+
+
+// --- RESPONSIVIDADE ---
+@media (max-width: 768px) {
+  .feature-item,
+  .feature-item.reverse {
+    // Em telas pequenas, reverte para um layout de coluna
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .feature-text h3 {
+    font-size: 1.5rem;
+  }
+}

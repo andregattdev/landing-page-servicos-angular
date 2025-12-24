@@ -1,0 +1,54 @@
+<section class="pricing-wrapper" id="precos">
+  <div class="container">
+    <h2>Nossos Planos de Serviço</h2>
+    <p class="subtitulo">Escolha o plano que melhor se encaixa nas necessidades do seu negócio.</p>
+
+    <div class="pricing-grid">
+
+      @for (tier of pricingTiers; track tier.titulo) {
+
+        <mat-card class="price-card" [class.card-destaque]="tier.destaque">
+
+          <mat-card-header>
+            <mat-card-title>{{ tier.titulo }}</mat-card-title>
+            <mat-card-subtitle>{{ tier.descricao }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content class="price-content">
+            <h3 class="price-value">
+              @if (tier.preco === 'Sob Consulta') {
+                {{ tier.preco }}
+              } @else {
+                R$ {{ tier.preco | number:'1.2-2':'pt' }}
+              }
+            </h3>
+
+            <ul class="resource-list">
+              @for (recurso of tier.recursos; track recurso) {
+                <li>
+                  <mat-icon color="accent">check_circle</mat-icon>
+                  <span>{{ recurso }}</span>
+                </li>
+              }
+            </ul>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <a
+              mat-flat-button
+              [color]="tier.destaque ? 'primary' : 'accent'"
+              href="#cta"
+            >
+              @if (tier.preco === 'Sob Consulta') {
+                Solicitar Cotação
+              } @else {
+                Quero Este Plano
+              }
+            </a>
+          </mat-card-actions>
+
+        </mat-card>
+      }
+    </div>
+  </div>
+</section>

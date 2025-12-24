@@ -1,0 +1,39 @@
+
+main {
+  padding-top: 64px;
+}
+
+.sidenav-container {
+  // Garante que o container ocupe a tela
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mobile-nav {
+    width: 250px;
+
+    mat-nav-list {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    .mat-list-item {
+        color: #333; /* Garante que os links não sejam brancos no fundo branco */
+        font-weight: 500;
+        line-height: 48px;
+        height: 48px;
+    }
+}
+
+.mobile-nav {
+  // Largura do menu quando ele abrir
+  width: 280px;
+}
+
+.nav-titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  color: #333;
+}

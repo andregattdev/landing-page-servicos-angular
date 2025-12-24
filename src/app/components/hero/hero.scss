@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  background-color: #004a99; // Um azul escuro para impacto
+  color: #fff;
+  padding: 6rem 0;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-titulo {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitulo {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.hero-botao {
+  display: inline-block;
+  background-color: #ffc107; // Amarelo para destaque (CTA)
+  color: #333;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    padding: 4rem 0; // Menos padding vertical
+  }
+
+  .hero-titulo {
+    font-size: 2.2rem; // Título principal bem menor
+  }
+
+  .hero-subtitulo {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+}

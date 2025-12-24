@@ -1,0 +1,39 @@
+<section class="features-wrapper">
+  <div class="container">
+    <h2>Nossas Soluções em Detalhe</h2>
+    <p class="subtitulo">Veja como podemos ajudar seu negócio a crescer.</p>
+
+    <div class="features-list">
+
+      @for (feature of features; track feature.id; let i = $index) {
+
+        <div class="feature-item" [class.reverse]="i % 2 !== 0">
+
+          <div class="feature-image">
+            <img [src]="feature.imagemUrl" [alt]="feature.titulo">
+          </div>
+
+          <div class="feature-text">
+            <h3>{{ feature.titulo }}</h3>
+            <p>{{ feature.descricao }}</p>
+
+            <ul class="key-points">
+              @for (ponto of feature.pontosChave; track $index) {
+                <li>
+                  <mat-icon color="primary">check</mat-icon>
+                  <span>{{ ponto }}</span>
+                </li>
+              }
+            </ul>
+
+            <a mat-flat-button color="primary" href="#cta">
+              Solicitar Orçamento
+            </a>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

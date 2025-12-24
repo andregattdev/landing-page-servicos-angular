@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <div class="container toolbar-content">
+
+    <a href="#" class="logo">Andre Gatt.Dev</a>
+
+    <nav class="navegacao-desktop">
+      <a mat-button href="#servicos">Serviços</a>
+
+      <a mat-button href="#features">Soluções</a>
+
+      <a mat-button href="#precos">Preços</a>
+
+      <a mat-button href="#processo">Processo</a>
+
+      <a mat-button href="#faq">Dúvidas (FAQ)</a>
+
+      <a mat-button href="#cta">Contato</a>
+    </nav>
+
+    <button
+      mat-icon-button
+      class="navegacao-mobile"
+      (click)="menuToggleClick.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+  </div>
+</mat-toolbar>

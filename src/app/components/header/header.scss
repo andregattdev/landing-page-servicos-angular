@@ -1,0 +1,51 @@
+// Em: src/app/components/header/header.component.scss (CORRIGIDO)
+
+:host {
+  // CORRIGIDO: Deve ser 'fixed' para ficar imóvel, 'sticky' só cola no topo.
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; // Garantindo que ele ocupe toda a largura
+  z-index: 1000;
+  // O mat-toolbar dentro do host já provê a cor e a altura de 64px
+}
+
+.toolbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ 
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0096B4;
+  text-decoration: none;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* 1. Esconde o menu de links no mobile (Mobile First - já correto) */
+.navegacao-desktop {
+  display: none;
+}
+
+/* 2. Mostra o botão hambúrguer no mobile (Mobile First - já correto) */
+.navegacao-mobile {
+  display: block;
+}
+
+
+/* 3. Acima de 769px (Desktop) */
+@media (min-width: 769px) {
+
+  .navegacao-desktop {
+    display: block; // Mostra os links
+  }
+
+  .navegacao-mobile {
+    display: none; // Esconde o hambúrguer
+  }
+}

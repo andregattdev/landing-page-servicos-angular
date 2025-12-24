@@ -1,0 +1,25 @@
+<section class="faq-wrapper">
+  <div class="container">
+    <h2>Perguntas Frequentes (FAQ)</h2>
+    <p class="subtitulo">Tire suas dúvidas mais comuns sobre nossos serviços.</p>
+
+    <mat-accordion multi="true" class="faq-list">
+
+      @for (item of faqs; track $index) {
+        <mat-expansion-panel>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon color="primary">help_outline</mat-icon>
+              <span>{{ item.pergunta }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <p class="faq-resposta">{{ item.resposta }}</p>
+
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+
+  </div>
+</section>
