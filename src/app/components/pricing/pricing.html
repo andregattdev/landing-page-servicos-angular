@@ -10,7 +10,12 @@
         <mat-card class="price-card" [class.card-destaque]="tier.destaque">
 
           <mat-card-header>
-            <mat-card-title>{{ tier.titulo }}</mat-card-title>
+            <mat-card-title>
+              {{ tier.titulo }}
+              @if (tier.destaque) {
+                <span class="badge">Recomendado</span>
+              }
+            </mat-card-title>
             <mat-card-subtitle>{{ tier.descricao }}</mat-card-subtitle>
           </mat-card-header>
 
@@ -19,9 +24,15 @@
               @if (tier.preco === 'Sob Consulta') {
                 {{ tier.preco }}
               } @else {
-                R$ {{ tier.preco | number:'1.2-2':'pt' }}
+                <span class="from">A partir de</span>
+                R$ {{ tier.preco | number:'1.0-0':'pt' }}
               }
             </h3>
+
+            <div class="ideal-para">
+              <span class="ideal-para__label">Ideal para</span>
+              <span class="ideal-para__value">{{ tier.idealPara }}</span>
+            </div>
 
             <ul class="resource-list">
               @for (recurso of tier.recursos; track recurso) {
@@ -36,7 +47,7 @@
           <mat-card-actions>
             <a
               mat-flat-button
-              [color]="tier.destaque ? 'primary' : 'accent'"
+              [color]="tier.destaque ? 'primary' : 'primary'"
               href="#cta"
             >
               @if (tier.preco === 'Sob Consulta') {
@@ -50,5 +61,10 @@
         </mat-card>
       }
     </div>
+
+    <p class="disclaimer">
+      Valores são referências e podem variar conforme escopo, prazos e integrações. A proposta final é
+      enviada após entendimento do seu objetivo.
+    </p>
   </div>
 </section>

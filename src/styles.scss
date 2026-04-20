@@ -2,8 +2,13 @@
 @use '@angular/material' as mat;
 @use 'sweetalert2/src/sweetalert2';
 
-
 html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+html.theme-light {
+  color-scheme: light;
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
@@ -14,74 +19,114 @@ html {
   ));
 }
 
-body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
+html.theme-dark {
+  color-scheme: dark;
+  @include mat.theme((
+    color: (
+      theme-type: dark,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
 
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
+:root {
+  --app-container: 1120px;
+  --app-gutter: 24px;
+  --app-gutter-sm: 16px;
+  --app-section-y: 88px;
+  --app-section-y-sm: 56px;
+  --app-radius: 18px;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
-  margin: 0;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+.container,
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  letter-spacing: -0.02em;
+}
+
+.subtitulo {
+  letter-spacing: -0.01em;
+}
+
+.mat-drawer-content,
+.mat-sidenav-content {
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: var(--app-container);
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #1a1a1a;
+  padding: 0 var(--app-gutter);
 }
 
 section {
-  padding: 4rem 0;
+  padding: var(--app-section-y) 0;
+}
+
+h2 {
+  font: var(--mat-sys-headline-medium);
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--mat-sys-on-surface);
 }
 
 @media (max-width: 768px) {
-
-  /* Reduz o tamanho geral das fontes */
-  body {
-    font-size: 15px;
-  }
-
-  /* Reduz o padding das seções */
-  section {
-    padding: 2.5rem 0;
-  }
-
-  /* Reduz o padding lateral do container */
   .container {
-    padding: 0 1rem; // Em vez de 0 2rem
+    padding: 0 var(--app-gutter-sm);
   }
 
-  /* Reduz os títulos principais */
+  section {
+    padding: var(--app-section-y-sm) 0;
+  }
+
   h2 {
-    font-size: 2rem;
+    font: var(--mat-sys-headline-small);
   }
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

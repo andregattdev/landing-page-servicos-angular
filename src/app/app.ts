@@ -11,6 +11,7 @@ import { ServiceFeatures } from "./components/service-features/service-features"
 import { Faq } from './components/faq/faq';
 import { Process } from './components/process/process';
 import { Pricing } from './components/pricing/pricing';
+import { Projects } from './components/projects/projects';
 
 
 
@@ -21,6 +22,7 @@ import { Pricing } from './components/pricing/pricing';
     Header,
     Hero,
     Services,
+    Projects,
     Cta,
     Faq,
     Process,

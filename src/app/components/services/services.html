@@ -5,11 +5,31 @@
 
     <div class="services-grid">
       @for (servico of servicos; track servico.id) {
-        <div class="service-card">
-          <img [src]="servico.icone" [alt]="servico.nome" class="service-icon">
-          <h3>{{ servico.nome }}</h3>
-          <p>{{ servico.descricao }}</p>
-        </div>
+        <mat-card class="service-card" appearance="outlined">
+          <div class="service-card__icon">
+            <img [src]="servico.icone" [alt]="servico.nome">
+          </div>
+          <mat-card-header>
+            <mat-card-title>{{ servico.nome }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ servico.descricao }}</p>
+            <div class="service-card__ideal">
+              <span class="service-card__idealLabel">Ideal para</span>
+              <span class="service-card__idealValue">{{ servico.idealPara }}</span>
+            </div>
+
+            <ul class="service-card__bullets">
+              @for (d of servico.destaques; track d) {
+                <li>{{ d }}</li>
+              }
+            </ul>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <a mat-button href="#precos">Ver planos</a>
+            <a mat-flat-button color="primary" href="#cta">Falar comigo</a>
+          </mat-card-actions>
+        </mat-card>
       }
     </div>
   </div>

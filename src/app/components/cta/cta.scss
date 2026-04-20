@@ -1,13 +1,14 @@
 :host {
   display: block;
-  background-color: #f9f9f9;
+  background-color: var(--mat-sys-surface);
 }
 
 .subtitulo {
   text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 3rem;
+  font: var(--mat-sys-body-large);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 72%, transparent);
+  margin: 0 auto 32px;
+  max-width: 70ch;
 }
 
 .cta-form {
@@ -29,10 +30,19 @@
 
   input, textarea {
     width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px 14px;
+    font: var(--mat-sys-body-medium);
+    color: var(--mat-sys-on-surface);
+    background-color: var(--mat-sys-surface-container);
+    border: 1px solid var(--mat-sys-outline-variant);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  input:focus, textarea:focus {
+    border-color: color-mix(in srgb, var(--mat-sys-primary) 65%, var(--mat-sys-outline-variant));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--mat-sys-primary) 18%, transparent);
   }
 
   textarea {
@@ -41,28 +51,27 @@
 }
 
 .error-message {
-  color: #d93025;
+  color: var(--mat-sys-error);
   font-size: 0.9rem;
   margin-top: 0.3rem;
 }
 
 .cta-botao {
-  background-color: #0056b3; // Azul mais forte
-  color: white;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  background-color: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  padding: 14px 16px;
+  font: var(--mat-sys-label-large);
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 160ms ease, background-color 160ms ease, opacity 160ms ease;
 
   &:hover {
-    background-color: #004a99;
+    transform: translateY(-1px);
   }
 
   &:disabled {
-    background-color: #ccc;
+    opacity: 0.55;
     cursor: not-allowed;
   }
 }

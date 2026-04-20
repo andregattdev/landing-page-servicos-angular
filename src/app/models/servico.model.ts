@@ -3,4 +3,6 @@ export interface Servico {
   nome: string;
   descricao: string;
   icone: string; 
+  idealPara: string;
+  destaques: string[];
 }

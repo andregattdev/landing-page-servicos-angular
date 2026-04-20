@@ -1,9 +1,59 @@
-<footer class="footer-wrapper">
-  <div class="container">
-    <img src="/assets/images/logo-andreGattDev.jpg" alt="Logo Andre Gatt Dev - Desenvolvimento de Software"
-      class="footer-logo">
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <img
+          src="/assets/images/logo-andreGattDev.jpg"
+          alt="Andre Gatt Dev"
+          loading="lazy"
+          decoding="async">
+      </div>
+      <div>
+        <div class="footer__name">Andre Gatt.Dev</div>
+        <p class="footer__desc">
+          Desenvolvimento web com foco em produto: performance, acessibilidade e UX.
+        </p>
+      </div>
+    </div>
 
-    <p>&copy; 2025 Andregattdev. Todos os direitos reservados.</p>
+    <div class="footer__col">
+      <div class="footer__title">Navegação</div>
+      <a class="footer__link" href="#servicos">Serviços</a>
+      <a class="footer__link" href="#projetos">Projetos</a>
+      <a class="footer__link" href="#features">Soluções</a>
+      <a class="footer__link" href="#processo">Processo</a>
+      <a class="footer__link" href="#precos">Preços</a>
+      <a class="footer__link" href="#faq">FAQ</a>
+      <a class="footer__link" href="#cta">Contato</a>
+    </div>
 
+    <div class="footer__col">
+      <div class="footer__title">Contato</div>
+      <a class="footer__link" href="mailto:contato@andregatt.dev">contato@andregatt.dev</a>
+      <a class="footer__link" href="tel:+550000000000">+55 (00) 00000-0000</a>
+      <div class="footer__actions">
+        <a mat-stroked-button color="primary" href="#cta">Pedir orçamento</a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">Redes</div>
+      <a class="footer__social" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <mat-icon>business_center</mat-icon>
+        <span>LinkedIn</span>
+      </a>
+      <a class="footer__social" href="https://github.com/" target="_blank" rel="noreferrer">
+        <mat-icon>code</mat-icon>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© {{ year }} Andre Gatt.Dev. Todos os direitos reservados.</p>
+    <div class="footer__bottomLinks">
+      <a class="footer__link" href="#">Política de privacidade</a>
+      <a class="footer__link" href="#">Termos</a>
+    </div>
   </div>
 </footer>

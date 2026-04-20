@@ -15,14 +15,20 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 12px;
  
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0096B4;
+  color: var(--mat-sys-on-primary);
   text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.theme-toggle {
+  margin-left: auto;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -42,10 +48,16 @@
 @media (min-width: 769px) {
 
   .navegacao-desktop {
-    display: block; // Mostra os links
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
   .navegacao-mobile {
     display: none; // Esconde o hambúrguer
+  }
+
+  .theme-toggle {
+    margin-left: 0;
   }
 }

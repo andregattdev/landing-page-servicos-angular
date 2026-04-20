@@ -3,44 +3,86 @@
 /* :host garante que os estilos fiquem encapsulados neste componente */
 :host {
   display: block; // Boa prática para componentes de seção
-  background-color: #f4f4f4; // Fundo levemente cinza
+  background-color: var(--mat-sys-surface);
 }
 
 .subtitulo {
   text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 3rem;
+  font: var(--mat-sys-body-large);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 72%, transparent);
+  margin: 0 auto 32px;
+  max-width: 70ch;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 18px;
 }
 
 .service-card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 18px;
+  border-radius: var(--app-radius);
+  background-color: var(--mat-sys-surface-container);
+  border-color: var(--mat-sys-outline-variant);
+  transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--mat-sys-primary) 50%, var(--mat-sys-outline-variant));
   }
 }
 
-.service-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 1.5rem;
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background-color: color-mix(in srgb, var(--mat-sys-primary) 12%, var(--mat-sys-surface));
+  border: 1px solid var(--mat-sys-outline-variant);
+  margin-bottom: 12px;
+
+  img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
 }
 
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: #0056b3; // Um azul como destaque
+mat-card-title {
+  font: var(--mat-sys-title-large);
+  letter-spacing: -0.01em;
+}
+
+mat-card-content p {
+  margin: 8px 0 0;
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 74%, transparent);
+}
+
+.service-card__ideal {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  background-color: color-mix(in srgb, var(--mat-sys-surface) 60%, transparent);
+  display: grid;
+  gap: 2px;
+}
+
+.service-card__idealLabel {
+  font: var(--mat-sys-label-large);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 70%, transparent);
+}
+
+.service-card__idealValue {
+  font: var(--mat-sys-body-medium);
+}
+
+.service-card__bullets {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 78%, transparent);
+  display: grid;
+  gap: 6px;
 }

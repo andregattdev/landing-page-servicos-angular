@@ -1,14 +1,14 @@
 :host {
   display: block;
-  background-color: #f9f9f9; // Um fundo leve
-  padding: 4rem 0;
+  background-color: var(--mat-sys-surface);
 }
 
 .subtitulo {
   text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 3rem;
+  font: var(--mat-sys-body-large);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 72%, transparent);
+  margin: 0 auto 32px;
+  max-width: 70ch;
 }
 
 .faq-list {
@@ -33,5 +33,5 @@ mat-icon {
   padding: 0 1rem 1rem 1rem;
   font-size: 1rem;
   line-height: 1.7;
-  color: #333;
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 78%, transparent);
 }

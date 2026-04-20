@@ -6,16 +6,27 @@
     <nav class="navegacao-desktop">
       <a mat-button href="#servicos">Serviços</a>
 
+      <a mat-button href="#projetos">Projetos</a>
+
       <a mat-button href="#features">Soluções</a>
 
-      <a mat-button href="#precos">Preços</a>
-
       <a mat-button href="#processo">Processo</a>
+
+      <a mat-button href="#precos">Preços</a>
 
       <a mat-button href="#faq">Dúvidas (FAQ)</a>
 
       <a mat-button href="#cta">Contato</a>
     </nav>
+
+    <button
+      mat-icon-button
+      class="theme-toggle"
+      type="button"
+      [attr.aria-label]="themeLabel()"
+      (click)="toggleTheme()">
+      <mat-icon>{{ themeIcon() }}</mat-icon>
+    </button>
 
     <button
       mat-icon-button

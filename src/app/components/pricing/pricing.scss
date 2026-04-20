@@ -2,17 +2,16 @@
 
 :host {
   display: block;
-  // Usando uma variável CSS para cores de fundo
-  background-color: var(--mat-sidenav-container-background-color, #f0f0f0);
-  padding: 4rem 0;
+  background-color: var(--mat-sys-surface);
 }
 
 // Estilos de Contexto
 .subtitulo {
   text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 3.5rem;
+  font: var(--mat-sys-body-large);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 72%, transparent);
+  margin: 0 auto 32px;
+  max-width: 70ch;
 }
 
 // -------------------------------------------------------------
@@ -22,7 +21,7 @@
   display: grid;
   // Desktop: 3 colunas uniformes
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 18px;
   align-items: stretch;
 }
 
@@ -31,18 +30,18 @@
 // -------------------------------------------------------------
 .price-card {
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: var(--app-radius);
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: var(--mat-sys-surface-container);
+  border: 1px solid var(--mat-sys-outline-variant);
 
   // TRANSITION: Efeito de hover
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease;
 
   // HOVER EFFECT
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--mat-sys-primary) 50%, var(--mat-sys-outline-variant));
   }
 
   // ELEMENTO: mat-card-header
@@ -54,18 +53,64 @@
 
   // ELEMENTO: mat-card-title
   mat-card-title {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font: var(--mat-sys-title-large);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
+
+  mat-card-subtitle {
+    color: color-mix(in srgb, var(--mat-sys-on-surface) 70%, transparent);
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font: var(--mat-sys-label-large);
+  border: 1px solid var(--mat-sys-outline-variant);
+  background-color: color-mix(in srgb, var(--mat-sys-primary) 10%, var(--mat-sys-surface));
+  color: var(--mat-sys-on-surface);
 }
 
 // ELEMENTO: price-value
 .price-value {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin: 1.5rem 0;
-  // Usando a variável de cor Material
-  color: var(--mat-primary-600);
+  font: var(--mat-sys-headline-large);
+  margin: 16px 0 8px;
+  color: var(--mat-sys-primary);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.from {
+  font: var(--mat-sys-label-large);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 70%, transparent);
+}
+
+.ideal-para {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  background-color: color-mix(in srgb, var(--mat-sys-surface) 60%, transparent);
+  margin: 12px 0 0;
+  text-align: left;
+}
+
+.ideal-para__label {
+  font: var(--mat-sys-label-large);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 70%, transparent);
+}
+
+.ideal-para__value {
+  font: var(--mat-sys-body-medium);
 }
 
 // ELEMENTO: resource-list
@@ -73,8 +118,8 @@
   list-style: none;
   padding: 0;
   text-align: left;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 16px;
+  margin-bottom: 18px;
 
   // ELEMENTO: item da lista (li)
   li {
@@ -82,26 +127,32 @@
     align-items: flex-start;
     gap: 0.5rem;
     margin-bottom: 0.8rem;
-    font-size: 0.95rem;
+    font: var(--mat-sys-body-medium);
   }
+}
+
+.disclaimer {
+  margin: 18px auto 0;
+  max-width: 80ch;
+  text-align: center;
+  font: var(--mat-sys-body-small);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 70%, transparent);
 }
 
 // -------------------------------------------------------------
 // MODIFIER: DESTAQUE PARA O PLANO RECOMENDADO
 // -------------------------------------------------------------
 .card-destaque {
-  transform: scale(1.05);
-  border: 3px solid var(--mat-primary-500);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--mat-sys-primary) 70%, var(--mat-sys-outline-variant));
 
   // Override no hover para evitar duplicação de transform
   &:hover {
-    transform: scale(1.05) translateY(-8px); // Mantém o scale, adiciona o movimento
+    transform: translateY(-2px);
   }
 
   .price-value {
-    font-size: 3rem;
-    color: var(--mat-accent-500);
+    color: var(--mat-sys-primary);
   }
 }
 
@@ -115,12 +166,8 @@
   }
 
   .card-destaque {
-    // Remove o scale no mobile, mas mantém o border/shadow
-    transform: none;
-
-    // Garante que o hover de movimento funcione no mobile se o scale for removido
     &:hover {
-        transform: translateY(-8px);
+      transform: translateY(-2px);
     }
   }
 }

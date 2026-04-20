@@ -4,9 +4,10 @@
 
     <mat-nav-list>
       <a mat-list-item href="#servicos" (click)="sidenav.close()">Serviços</a>
+      <a mat-list-item href="#projetos" (click)="sidenav.close()">Projetos</a>
       <a mat-list-item href="#features" (click)="sidenav.close()">Soluções</a>
-      <a mat-list-item href="#precos" (click)="sidenav.close()">Preços</a>
       <a mat-list-item href="#processo" (click)="sidenav.close()">Processo</a>
+      <a mat-list-item href="#precos" (click)="sidenav.close()">Preços</a>
       <a mat-list-item href="#faq" (click)="sidenav.close()">Dúvidas (FAQ)</a>
       <a mat-list-item href="#cta" (click)="sidenav.close()">Contato</a>
     </mat-nav-list>
@@ -17,9 +18,10 @@
     <main>
       <app-hero />
       <app-services id="servicos" />
+      <app-projects id="projetos" />
       <app-service-features id="features" />
-      <app-pricing id="precos" />
       <app-process id="processo" />
+      <app-pricing id="precos" />
       <app-faq id="faq" />
       <app-cta id="cta" />
     </main>

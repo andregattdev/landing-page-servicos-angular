@@ -1,43 +1,139 @@
-/* Estilo do Host: Define o Bloco do Footer */
 :host {
   display: block;
-  background-color: #222; /* Fundo Quase Preto */
-  color: #aaa;           /* Cor do Texto Cinza Claro */
-  padding: 2rem 0;       /* Espaçamento Vertical */
-  width: 100%;           /* Garante que ocupe a largura total */
 }
 
-/* Container: Responsável pelo alinhamento Flexbox */
-.container {
-  /* Centraliza o próprio container principal (se ele tiver um max-width definido em outro lugar) */
-  margin: 0 auto;
-  /* Adicione um max-width aqui se não tiver um global para evitar que o conteúdo se estique demais */
-  max-width: 1200px;
+.footer {
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+  border-top: 1px solid var(--mat-sys-outline-variant);
+  padding: 40px 0 22px;
+}
 
-  /* Configuração do Flexbox para alinhamento interno */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.footer__brand {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.footer__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--mat-sys-outline-variant);
+  background-color: var(--mat-sys-surface);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+.footer__name {
+  font: var(--mat-sys-title-large);
+  letter-spacing: -0.01em;
+}
+
+.footer__desc {
+  margin: 6px 0 0;
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 72%, transparent);
+  font: var(--mat-sys-body-medium);
+  max-width: 52ch;
+}
+
+.footer__title {
+  font: var(--mat-sys-title-medium);
+  margin-bottom: 10px;
+}
+
+.footer__col {
+  display: grid;
+  gap: 10px;
+}
+
+.footer__link {
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 78%, transparent);
+  text-decoration: none;
+  font: var(--mat-sys-body-medium);
+
+  &:hover {
+    color: var(--mat-sys-on-surface);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 82%, transparent);
+  background-color: color-mix(in srgb, var(--mat-sys-surface) 55%, transparent);
+  border: 1px solid var(--mat-sys-outline-variant);
+
+  mat-icon {
+    color: var(--mat-sys-primary);
+  }
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--mat-sys-primary) 45%, var(--mat-sys-outline-variant));
+  }
+}
+
+.footer__actions {
+  margin-top: 2px;
+}
+
+.footer__bottom {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--mat-sys-outline-variant);
   display: flex;
-  align-items: center;  /* Centraliza Verticalmente (logo e texto) */
-  justify-content: center; /* Centraliza Horizontalmente o Bloco (logo + texto) */
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  font: var(--mat-sys-body-small);
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 70%, transparent);
 
-  font-size: 0.9rem;
+  p {
+    margin: 0;
+  }
 }
 
-/* Estilo da Logo: Define Tamanho e Espaçamento */
-.footer-logo {
-  max-width: 80px;      /* Tamanho da Logo */
-  height: auto;         /* Mantém Proporção */
-
-  /* Espaçamento entre a logo e o texto de copyright */
-  margin-right: 15px;
-
-  /* Garantindo que se comporta bem no Flexbox */
-  flex-shrink: 0;
+.footer__bottomLinks {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-/* Estilo do Parágrafo: Limpeza de Margens */
-p {
-  margin: 0; /* Remove margens padrão que poderiam atrapalhar o alinhamento Flex */
-  padding: 0;
-  /* Garante que o texto de copyright não seja quebrado pelo Flexbox */
-  white-space: nowrap;
+@media (max-width: 992px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 32px 0 18px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
 }

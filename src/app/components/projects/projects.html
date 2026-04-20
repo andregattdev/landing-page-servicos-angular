@@ -1,0 +1,103 @@
+<section class="projects">
+  <div class="container">
+    <h2>Projetos em destaque</h2>
+    <p class="subtitulo">
+      Alguns trabalhos recentes para você ver o padrão de entrega (layout, código e experiência).
+    </p>
+
+    @if (projects[0]; as featured) {
+      <mat-card class="featured" appearance="outlined">
+        <div class="featured__grid">
+          <div class="featured__media" aria-hidden="true">
+            @if (featured.imageUrl) {
+              <img [src]="featured.imageUrl" [alt]="featured.title" loading="lazy" decoding="async" (error)="onImageError(featured)">
+            }
+            <div class="featured__fallback">
+              <span class="featured__badge">Projeto em destaque</span>
+            </div>
+          </div>
+
+          <div class="featured__content">
+            <div class="featured__badgeRow">
+              <span class="featured__badge">Projeto em destaque</span>
+            </div>
+            <h3 class="featured__title">{{ featured.title }}</h3>
+            <p class="featured__summary">{{ featured.summary }}</p>
+
+            <mat-chip-set class="featured__tags" aria-label="Tecnologias do projeto destaque">
+              @for (t of featured.tags; track t) {
+                <mat-chip>{{ t }}</mat-chip>
+              }
+            </mat-chip-set>
+
+            @if (featured.impacts?.length) {
+              <ul class="featured__impacts">
+                @for (i of featured.impacts; track i) {
+                  <li>{{ i }}</li>
+                }
+              </ul>
+            }
+
+            <div class="featured__actions">
+              @if (featured.codeUrl) {
+                <a mat-button [href]="featured.codeUrl" target="_blank" rel="noreferrer">Código</a>
+              }
+              @if (featured.demoUrl) {
+                <a mat-flat-button color="primary" [href]="featured.demoUrl" target="_blank" rel="noreferrer">Ver demo</a>
+              }
+              <a mat-stroked-button color="primary" href="#cta">Quero um projeto assim</a>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    }
+
+    <div class="projects__grid">
+      @for (p of projects.slice(1); track p.id) {
+        <mat-card class="project" [class.project--highlight]="p.highlighted" appearance="outlined">
+          <div class="project__media" aria-hidden="true">
+            @if (p.imageUrl) {
+              <img [src]="p.imageUrl" [alt]="p.title" loading="lazy" decoding="async" (error)="onImageError(p)">
+            }
+            <div class="project__fallback"></div>
+          </div>
+
+          <mat-card-header>
+            <mat-card-title>{{ p.title }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p class="project__summary">{{ p.summary }}</p>
+            <mat-chip-set class="project__tags" aria-label="Tecnologias do projeto">
+              @for (t of p.tags; track t) {
+                <mat-chip>{{ t }}</mat-chip>
+              }
+            </mat-chip-set>
+          </mat-card-content>
+
+          <mat-card-actions align="end">
+            @if (p.codeUrl) {
+              <a mat-button [href]="p.codeUrl" target="_blank" rel="noreferrer">Código</a>
+            }
+            @if (p.demoUrl) {
+              <a mat-flat-button color="primary" [href]="p.demoUrl" target="_blank" rel="noreferrer">Ver demo</a>
+            }
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+
+    <div class="projects__cta">
+      <mat-card class="projects__ctaCard" appearance="outlined">
+        <div class="projects__ctaInner">
+          <div>
+            <div class="projects__ctaTitle">Curtiu o nível de acabamento?</div>
+            <div class="projects__ctaText">Vamos conversar sobre seu projeto e montar uma proposta objetiva.</div>
+          </div>
+          <a mat-flat-button color="primary" href="#cta">Falar comigo</a>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
