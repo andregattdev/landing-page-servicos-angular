@@ -117,6 +117,24 @@ h2 {
   color: var(--mat-sys-on-surface);
 }
 
+html.theme-light .logo-img {
+  content: url('/assets/images/logo-andre-gattermeyer-minimalista.png');
+}
+
+html.theme-dark .logo-img {
+  content: url('/assets/images/logo-andre-gattermeyer-minimalista-branco.png');
+}
+
+html.theme-light .footer-logo-img {
+  content: url('/assets/images/logo-andre-gattermeyer.png');
+}
+
+html.theme-dark .footer-logo-img {
+  content: url('/assets/images/logo-andre-gattermeyer-white.png');
+}
+
+
+
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--app-gutter-sm);

@@ -121,6 +121,14 @@
   flex-wrap: wrap;
 }
 
+html.theme-light .footer-logo-img {
+  content: url('/assets/images/logo-andre-gattermeyer.png');
+}
+
+html.theme-dark .footer-logo-img {
+  content: url('/assets/images/logo-andre-gattermeyer-white.png');
+}
+
 @media (max-width: 992px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
