@@ -1,39 +1,12 @@
-
-main {
-  padding-top: 64px;
-}
-
-.sidenav-container {
-  // Garante que o container ocupe a tela
-  width: 100%;
-  min-height: 100vh;
-}
-
-.mobile-nav {
-    width: 250px;
-
-    mat-nav-list {
-        display: flex;
-        flex-direction: column;
-        padding-top: 1rem;
-    }
-
-    .mat-list-item {
-        color: var(--mat-sys-on-surface);
-        font-weight: 500;
-        line-height: 48px;
-        height: 48px;
-    }
-}
-
-.mobile-nav {
-  // Largura do menu quando ele abrir
-  width: 280px;
-}
-
-.nav-titulo {
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 1.5rem 1rem 0.5rem 1rem;
-  color: var(--mat-sys-on-surface);
-}
+main { padding-top: 72px; }
+.sidenav-container { width: 100%; min-height: 100vh; }
+.mobile-nav { width: 280px; background: var(--mat-sys-surface); }
+.nav-titulo { padding: 1.5rem 1.25rem .75rem; color: var(--mat-sys-primary); font-size: 1.1rem; font-weight: 700; border-bottom: 1px solid var(--mat-sys-outline-variant); }
+.mobile-nav mat-nav-list { display: flex; flex-direction: column; padding-top: .5rem; }
+.mobile-nav a { color: var(--mat-sys-on-surface); font-weight: 500; }
+.about { padding: clamp(64px, 9vw, 112px) 0; background: var(--mat-sys-surface); }
+.about__inner { max-width: 820px; text-align: center; }
+.about h2 { margin: 14px 0 16px; font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.12; letter-spacing: -.05em; }
+.about p { max-width: 62ch; margin: 0 auto; color: color-mix(in srgb, var(--mat-sys-on-surface) 68%, transparent); font-size: 1.05rem; line-height: 1.8; }
+.about__stack { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+@media (max-width: 420px) { main { padding-top: 64px; } }

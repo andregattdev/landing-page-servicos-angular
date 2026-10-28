@@ -1,73 +1,53 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatButtonModule } from '@angular/material/button';
 import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule, MatCardModule, MatChipsModule, MatButtonModule],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
 export class Projects {
   readonly projects: Project[] = [
     {
-      id: 'produto-saas',
-      title: 'Projeto destaque (troque pelo seu)',
-      summary: 'Uma frase curta do projeto: o que foi entregue e qual o benefício.',
-      tags: ['Angular', 'Material', 'UX', 'Performance'],
-      imageUrl: '/assets/images/projects/projeto-01.webp',
-      demoUrl: '#',
-      codeUrl: '#',
+      id: 'gestao-financeira',
+      title: 'Gestão financeira pessoal',
+      summary: 'Aplicação web para organizar finanças pessoais, acompanhar o balanço mensal e entender os hábitos de consumo em um painel visual.',
+      tags: ['Angular 20', 'Material 3', 'TypeScript', 'Signals', 'Responsivo'],
+      imageUrl: '/assets/images/FrontFinancas 1.png',
+      demoUrl: 'https://github.com/andregattdev',
+      codeUrl: 'https://github.com/andregattdev',
       highlighted: true,
-      impacts: ['Impacto/resultado #1', 'Impacto/resultado #2', 'Impacto/resultado #3'],
+      impacts: ['Painel com métricas consolidadas', 'Temas claro e escuro', 'Arquitetura modular'],
     },
     {
-      id: 'landing-ssr',
-      title: 'Projeto 2 (troque pelo seu)',
-      summary: 'Uma frase curta descrevendo o projeto e o diferencial.',
-      tags: ['SSR', 'SEO', 'Core Web Vitals'],
-      imageUrl: '/assets/images/projects/projeto-02.webp',
-      demoUrl: '#',
-      codeUrl: '#',
+      id: 'landing-angular-ssr',
+      title: 'Landing page com Angular SSR',
+      summary: 'Site institucional construído para apresentar serviços com carregamento rápido, conteúdo acessível e fundamentos de SEO técnico.',
+      tags: ['Angular SSR', 'SEO técnico', 'Core Web Vitals', 'Acessibilidade'],
+      imageUrl: '/assets/images/financas responsivo.png',
+      demoUrl: 'https://andregatt.dev',
+      codeUrl: 'https://github.com/andregattdev',
+      highlighted: false,
     },
     {
-      id: 'ecommerce-ui',
-      title: 'Projeto 3 (troque pelo seu)',
-      summary: 'Uma frase curta descrevendo o projeto e o diferencial.',
-      tags: ['UI', 'A11y', 'Mobile-first'],
-      imageUrl: '/assets/images/projects/projeto-03.webp',
-      demoUrl: '#',
-      codeUrl: '#',
+      id: 'dashboard-administrativo',
+      title: 'Lançamentos e relatórios',
+      summary: 'Visão detalhada de movimentações com filtros, paginação e leitura clara dos dados para facilitar o acompanhamento financeiro.',
+      tags: ['Angular CDK', 'Tabelas', 'Filtros', 'TypeScript'],
+      imageUrl: '/assets/images/FrontFinancas 2.png',
+      demoUrl: 'https://github.com/andregattdev',
+      codeUrl: 'https://github.com/andregattdev',
+      highlighted: false,
     },
     {
-      id: 'projeto-4',
-      title: 'Projeto 4 (troque pelo seu)',
-      summary: 'Uma frase curta descrevendo o projeto e o diferencial.',
-      tags: ['API', 'Arquitetura', 'Qualidade'],
-      imageUrl: '/assets/images/projects/projeto-04.webp',
-      demoUrl: '#',
-      codeUrl: '#',
-    },
-    {
-      id: 'projeto-5',
-      title: 'Projeto 5 (troque pelo seu)',
-      summary: 'Uma frase curta descrevendo o projeto e o diferencial.',
-      tags: ['Design System', 'Componentes', 'A11y'],
-      imageUrl: '/assets/images/projects/projeto-05.webp',
-      demoUrl: '#',
-      codeUrl: '#',
-    },
-    {
-      id: 'projeto-6',
-      title: 'Projeto 6 (troque pelo seu)',
-      summary: 'Uma frase curta descrevendo o projeto e o diferencial.',
-      tags: ['Landing', 'Conversão', 'Performance'],
-      imageUrl: '/assets/images/projects/projeto-06.webp',
-      demoUrl: '#',
-      codeUrl: '#',
+      id: 'design-system-uikit',
+      title: 'Sistema visual & componentes',
+      summary: 'Conjunto de componentes reutilizáveis com tokens de estilo, contraste consistente e suporte aos temas claro e escuro.',
+      tags: ['UI/UX', 'Design system', 'SCSS', 'Material 3'],
+      imageUrl: '/assets/images/FrontFinancas 3.png',
+      demoUrl: 'https://github.com/andregattdev',
+      codeUrl: 'https://github.com/andregattdev',
+      highlighted: false,
     },
   ];
 
@@ -75,4 +55,3 @@ export class Projects {
     project.imageUrl = undefined;
   }
 }
-

@@ -19,6 +19,13 @@
   gap: 1.5rem;
 }
 
+.cta-hint {
+  margin: -8px 0 0;
+  text-align: center;
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 58%, transparent);
+  font: var(--mat-sys-body-small);
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -73,5 +80,49 @@
   &:disabled {
     opacity: 0.55;
     cursor: not-allowed;
+  }
+}
+
+.cta-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: color-mix(in srgb, var(--mat-sys-on-surface) 60%, transparent);
+  font: var(--mat-sys-label-medium);
+  margin: 4px 0;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--mat-sys-outline-variant);
+  }
+
+  span {
+    padding: 0 12px;
+  }
+}
+
+.cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25d366;
+  color: #ffffff;
+  padding: 14px 16px;
+  font: var(--mat-sys-label-large);
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 160ms ease, filter 160ms ease;
+
+  fa-icon {
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
   }
 }

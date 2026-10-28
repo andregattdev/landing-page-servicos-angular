@@ -1,63 +1,82 @@
-// Em: src/app/components/header/header.component.scss (CORRIGIDO)
-
 :host {
-  // CORRIGIDO: Deve ser 'fixed' para ficar imóvel, 'sticky' só cola no topo.
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0; // Garantindo que ele ocupe toda a largura
-  z-index: 1000;
-  // O mat-toolbar dentro do host já provê a cor e a altura de 64px
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 auto;
+}
+
+.site-toolbar {
+    height: 72px;
+    background: color-mix(in srgb, var(--mat-sys-surface) 88%, transparent);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent);
 }
 
 .toolbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 12px;
- 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
 }
 
 .logo {
-  font-size: 1.5rem;
-  padding-top:23px;
-  color: var(--mat-sys-on-primary);
-  text-decoration: none;
-  letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--mat-sys-on-surface);
+    text-decoration: none;
+}
+
+.logo__mark {
+    font-weight: 800;
+    letter-spacing: -.08em;
+    font-size: 1.25rem;
+}
+
+.logo__mark span {
+    color: var(--mat-sys-primary);
+}
+
+.logo__name {
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: -.02em;
+}
+
+.navegacao-desktop {
+    display: none;
+    align-items: center;
+    gap: 8px;
 }
 
 .theme-toggle {
-  margin-left: auto;
+    margin-left: auto;
 }
 
-/* --- RESPONSIVIDADE --- */
-
-/* 1. Esconde o menu de links no mobile (Mobile First - já correto) */
-.navegacao-desktop {
-  display: none;
-}
-
-/* 2. Mostra o botão hambúrguer no mobile (Mobile First - já correto) */
 .navegacao-mobile {
-  display: block;
+    display: block;
 }
 
-
-/* 3. Acima de 769px (Desktop) */
 @media (min-width: 769px) {
+    .navegacao-desktop {
+        display: flex;
+    }
 
-  .navegacao-desktop {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+    .navegacao-mobile {
+        display: none;
+    }
 
-  .navegacao-mobile {
-    display: none; // Esconde o hambúrguer
-  }
+    .theme-toggle {
+        margin-left: 0;
+    }
+}
 
-  .theme-toggle {
-    margin-left: 0;
-  }
+@media (max-width: 420px) {
+    .logo__name {
+        font-size: .82rem;
+    }
+
+    .site-toolbar {
+        height: 64px;
+    }
 }

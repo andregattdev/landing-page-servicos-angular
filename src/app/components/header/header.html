@@ -1,47 +1,15 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="site-toolbar">
   <div class="container toolbar-content">
-
-<a href="/" class="logo" aria-label="Logo André Gattermeyer">
-      <img
-        src="/assets/images/logo-andre-gattermeyer-minimalista.png"
-        alt="André Gattermeyer Tecnologia e Serviços"
-        loading="lazy"
-        decoding="async"
-        class="logo-img">
+    <a href="#inicio" class="logo" aria-label="André Gattermeyer, início">
+      <span class="logo__mark">ASG<span>.</span></span><span class="logo__name">André Gattermeyer</span>
     </a>
-
-
-    <nav class="navegacao-desktop">
-      <a mat-button href="#servicos">Serviços</a>
-
+    <nav class="navegacao-desktop" aria-label="Navegação principal">
       <a mat-button href="#projetos">Projetos</a>
-
-      <a mat-button href="#features">Soluções</a>
-
-      <a mat-button href="#processo">Processo</a>
-
-      <a mat-button href="#precos">Preços</a>
-
-      <a mat-button href="#faq">Dúvidas</a>
-
-      <a mat-button href="#cta">Contato</a>
+      <a mat-button href="#sobre">Sobre</a>
+      <a mat-button href="https://github.com/andregattdev" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a mat-flat-button color="primary" href="#contato">Vamos conversar</a>
     </nav>
-
-    <button
-      mat-icon-button
-      class="theme-toggle"
-      type="button"
-      [attr.aria-label]="themeLabel()"
-      (click)="toggleTheme()">
-      <mat-icon>{{ themeIcon() }}</mat-icon>
-    </button>
-
-    <button
-      mat-icon-button
-      class="navegacao-mobile"
-      (click)="menuToggleClick.emit()">
-      <mat-icon>menu</mat-icon>
-    </button>
-
+    <button mat-icon-button class="theme-toggle" type="button" [attr.aria-label]="themeLabel()" (click)="toggleTheme()"><mat-icon>{{ themeIcon() }}</mat-icon></button>
+    <button mat-icon-button class="navegacao-mobile" aria-label="Abrir menu" (click)="menuToggleClick.emit()"><mat-icon>menu</mat-icon></button>
   </div>
 </mat-toolbar>

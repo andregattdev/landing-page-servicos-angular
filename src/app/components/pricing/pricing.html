@@ -45,17 +45,23 @@
           </mat-card-content>
 
           <mat-card-actions>
-            <a
-              mat-flat-button
-              [color]="tier.destaque ? 'primary' : 'primary'"
-              href="#cta"
-            >
-              @if (tier.preco === 'Sob Consulta') {
-                Solicitar Cotação
-              } @else {
-                Quero Este Plano
-              }
-            </a>
+            @if (tier.destaque) {
+              <a mat-flat-button color="primary" href="#cta">
+                @if (tier.preco === 'Sob Consulta') {
+                  Solicitar Cotação
+                } @else {
+                  Quero Este Plano
+                }
+              </a>
+            } @else {
+              <a mat-stroked-button color="primary" href="#cta">
+                @if (tier.preco === 'Sob Consulta') {
+                  Solicitar Cotação
+                } @else {
+                  Quero Este Plano
+                }
+              </a>
+            }
           </mat-card-actions>
 
         </mat-card>

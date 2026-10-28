@@ -1,64 +1,12 @@
 <footer class="footer">
-  <div class="container footer__grid">
-    <div class="footer__brand">
-  <div class="footer__logo">
-    <img
-      src="/assets/images/logo-andre-gattermeyer.png"
-      alt="André Gattermeyer Tecnologia e Serviços"
-      loading="lazy"
-      decoding="async"
-      class="footer-logo-img">
+  <div class="container footer__top">
+    <a class="footer__brand" href="#inicio"><span>AG<span>.</span></span> André Gattermeyer</a>
+    <p>Feito com cuidado, código e café.</p>
+    <nav class="footer__social" aria-label="Redes sociais">
+      <a href="https://github.com/andregattdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><fa-icon [icon]="faGithub"></fa-icon></a>
+      <a href="https://www.linkedin.com/in/andregattermeyer/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+      <a href="https://wa.me/5543996761568" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><fa-icon [icon]="faWhatsapp"></fa-icon></a>
+    </nav>
   </div>
-  <div>
-    <div class="footer__name">André Gattermeyer</div>
-    <p class="footer__desc">
-      Desenvolvimento web com foco em produto: performance, acessibilidade e UX.
-    </p>
-  </div>
-</div>
-
-
-    <div class="footer__col">
-      <div class="footer__title">Navegação</div>
-      <a class="footer__link" href="#servicos">Serviços</a>
-      <a class="footer__link" href="#projetos">Projetos</a>
-      <a class="footer__link" href="#features">Soluções</a>
-      <a class="footer__link" href="#processo">Processo</a>
-      <a class="footer__link" href="#precos">Preços</a>
-      <a class="footer__link" href="#faq">FAQ</a>
-      <a class="footer__link" href="#cta">Contato</a>
-    </div>
-
-    <div class="footer__col">
-      <div class="footer__title">Contato</div>
-      <a class="footer__link" href="mailto:contato@andregatt.dev">contato@andregatt.dev</a>
-      <a class="footer__link" href="tel:+550000000000">+55 (43) 99676-1568</a>
-      <div class="footer__actions">
-        <a mat-stroked-button color="primary" href="#cta">Pedir orçamento</a>
-      </div>
-    </div>
-
-    <div class="footer__col">
-  <div class="footer__title">Redes</div>
-
-  <a class="footer__social" href="https://www.linkedin.com/in/andregattermeyer/" target="_blank" rel="noreferrer">
-    <fa-icon [icon]="faLinkedin"></fa-icon>
-    <span>LinkedIn</span>
-  </a>
-
-  <a class="footer__social" href="https://github.com/andregattdev" target="_blank" rel="noreferrer">
-    <fa-icon [icon]="faGithub"></fa-icon>
-    <span>GitHub</span>
-  </a>
-</div>
-
-  </div>
-
-  <div class="container footer__bottom">
-    <p>© {{ year }} Andre Gatt.Dev. Todos os direitos reservados.</p>
-    <div class="footer__bottomLinks">
-      <a class="footer__link" href="#">Política de privacidade</a>
-      <a class="footer__link" href="#">Termos</a>
-    </div>
-  </div>
+  <div class="container footer__bottom"><span>© {{ year }} André Gattermeyer</span><a href="#inicio">Voltar ao início ↑</a></div>
 </footer>

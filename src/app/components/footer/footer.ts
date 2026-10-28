@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // ADICIONE ESTA IMPORTAÇÃO:
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -15,6 +15,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 export class Footer {
   readonly year = new Date().getFullYear();
   
-  faGithub = faGithub;
-  faLinkedin = faLinkedin;
+  readonly faGithub = faGithub;
+  readonly faLinkedin = faLinkedin;
+  readonly faWhatsapp = faWhatsapp;
 }
